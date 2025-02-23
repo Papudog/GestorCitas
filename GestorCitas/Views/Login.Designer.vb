@@ -150,7 +150,7 @@ Partial Class Login
         Controls.Add(Label1)
         Controls.Add(Panel1)
         Name = "Login"
-        Text = "Form1"
+        Text = "Login"
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()

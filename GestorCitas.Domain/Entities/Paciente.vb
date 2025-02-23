@@ -76,7 +76,11 @@ Public Class Paciente
 
     Public ReadOnly Property Edad As Integer Implements IPaciente.Edad
         Get
-            Return DateTime.Today.Year - FechaNacimiento.Year
+            Dim edadPaciente As Integer = DateTime.Today.Year - FechaNacimiento.Year
+            If DateTime.Today.DayOfYear < FechaNacimiento.DayOfYear Then
+                edadPaciente -= 1
+            End If
+            Return edadPaciente
         End Get
     End Property
 End Class

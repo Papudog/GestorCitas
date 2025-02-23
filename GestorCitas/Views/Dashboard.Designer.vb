@@ -40,7 +40,7 @@ Partial Class Dashboard
         MenuStrip1.Items.AddRange(New ToolStripItem() {PacienteToolStripMenuItem, ConsultaToolStripMenuItem, SistemaToolStripMenuItem})
         MenuStrip1.Location = New Point(0, 0)
         MenuStrip1.Name = "MenuStrip1"
-        MenuStrip1.Size = New Size(800, 28)
+        MenuStrip1.Size = New Size(982, 28)
         MenuStrip1.TabIndex = 1
         MenuStrip1.Text = "MenuStrip1"
         ' 
@@ -54,13 +54,13 @@ Partial Class Dashboard
         ' AñadirToolStripMenuItem
         ' 
         AñadirToolStripMenuItem.Name = "AñadirToolStripMenuItem"
-        AñadirToolStripMenuItem.Size = New Size(224, 26)
+        AñadirToolStripMenuItem.Size = New Size(140, 26)
         AñadirToolStripMenuItem.Text = "Añadir"
         ' 
         ' ListaToolStripMenuItem
         ' 
         ListaToolStripMenuItem.Name = "ListaToolStripMenuItem"
-        ListaToolStripMenuItem.Size = New Size(224, 26)
+        ListaToolStripMenuItem.Size = New Size(140, 26)
         ListaToolStripMenuItem.Text = "Listado"
         ' 
         ' ConsultaToolStripMenuItem
@@ -73,13 +73,13 @@ Partial Class Dashboard
         ' AñadirToolStripMenuItem1
         ' 
         AñadirToolStripMenuItem1.Name = "AñadirToolStripMenuItem1"
-        AñadirToolStripMenuItem1.Size = New Size(224, 26)
+        AñadirToolStripMenuItem1.Size = New Size(140, 26)
         AñadirToolStripMenuItem1.Text = "Añadir"
         ' 
         ' ListadoToolStripMenuItem
         ' 
         ListadoToolStripMenuItem.Name = "ListadoToolStripMenuItem"
-        ListadoToolStripMenuItem.Size = New Size(224, 26)
+        ListadoToolStripMenuItem.Size = New Size(140, 26)
         ListadoToolStripMenuItem.Text = "Listado"
         ' 
         ' SistemaToolStripMenuItem
@@ -92,14 +92,14 @@ Partial Class Dashboard
         ' CerrarToolStripMenuItem
         ' 
         CerrarToolStripMenuItem.Name = "CerrarToolStripMenuItem"
-        CerrarToolStripMenuItem.Size = New Size(224, 26)
+        CerrarToolStripMenuItem.Size = New Size(132, 26)
         CerrarToolStripMenuItem.Text = "Cerrar"
         ' 
         ' Dashboard
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(800, 625)
+        ClientSize = New Size(982, 853)
         Controls.Add(MenuStrip1)
         IsMdiContainer = True
         MainMenuStrip = MenuStrip1

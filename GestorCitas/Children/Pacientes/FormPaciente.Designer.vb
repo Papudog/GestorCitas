@@ -88,7 +88,7 @@ Partial Class FormPaciente
         TextTelefono.Location = New Point(6, 334)
         TextTelefono.Name = "TextTelefono"
         TextTelefono.Size = New Size(295, 27)
-        TextTelefono.TabIndex = 13
+        TextTelefono.TabIndex = 5
         ' 
         ' Label6
         ' 
@@ -105,7 +105,7 @@ Partial Class FormPaciente
         TextDireccion.Multiline = True
         TextDireccion.Name = "TextDireccion"
         TextDireccion.Size = New Size(295, 84)
-        TextDireccion.TabIndex = 11
+        TextDireccion.TabIndex = 6
         ' 
         ' Label5
         ' 
@@ -121,7 +121,7 @@ Partial Class FormPaciente
         TextCorreo.Location = New Point(6, 272)
         TextCorreo.Name = "TextCorreo"
         TextCorreo.Size = New Size(295, 27)
-        TextCorreo.TabIndex = 9
+        TextCorreo.TabIndex = 4
         ' 
         ' TextEdad
         ' 
@@ -129,7 +129,7 @@ Partial Class FormPaciente
         TextEdad.Location = New Point(179, 201)
         TextEdad.Name = "TextEdad"
         TextEdad.Size = New Size(125, 27)
-        TextEdad.TabIndex = 8
+        TextEdad.TabIndex = 3
         ' 
         ' Label4
         ' 
@@ -147,7 +147,7 @@ Partial Class FormPaciente
         DateTimeNacimiento.Location = New Point(6, 201)
         DateTimeNacimiento.Name = "DateTimeNacimiento"
         DateTimeNacimiento.Size = New Size(150, 27)
-        DateTimeNacimiento.TabIndex = 6
+        DateTimeNacimiento.TabIndex = 2
         ' 
         ' Label3
         ' 
@@ -172,7 +172,7 @@ Partial Class FormPaciente
         TextCedula.Location = New Point(6, 130)
         TextCedula.Name = "TextCedula"
         TextCedula.Size = New Size(295, 27)
-        TextCedula.TabIndex = 2
+        TextCedula.TabIndex = 1
         ' 
         ' Label1
         ' 
@@ -215,7 +215,7 @@ Partial Class FormPaciente
         ButtonAñadir.Location = New Point(462, 498)
         ButtonAñadir.Name = "ButtonAñadir"
         ButtonAñadir.Size = New Size(125, 29)
-        ButtonAñadir.TabIndex = 2
+        ButtonAñadir.TabIndex = 9
         ButtonAñadir.Text = "Añadir paciente"
         ButtonAñadir.UseVisualStyleBackColor = True
         ' 
@@ -224,7 +224,7 @@ Partial Class FormPaciente
         ButtonLimpiar.Location = New Point(462, 463)
         ButtonLimpiar.Name = "ButtonLimpiar"
         ButtonLimpiar.Size = New Size(125, 29)
-        ButtonLimpiar.TabIndex = 3
+        ButtonLimpiar.TabIndex = 8
         ButtonLimpiar.Text = "Limpiar campos"
         ButtonLimpiar.UseVisualStyleBackColor = True
         ' 
@@ -233,7 +233,7 @@ Partial Class FormPaciente
         ButtonImagen.Location = New Point(462, 308)
         ButtonImagen.Name = "ButtonImagen"
         ButtonImagen.Size = New Size(125, 29)
-        ButtonImagen.TabIndex = 4
+        ButtonImagen.TabIndex = 7
         ButtonImagen.Text = "Cargar imagen"
         ButtonImagen.UseVisualStyleBackColor = True
         ' 

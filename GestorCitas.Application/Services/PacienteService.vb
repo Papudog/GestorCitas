@@ -1,5 +1,4 @@
-﻿Imports System.Text.RegularExpressions
-Imports GestorCitas.Domain
+﻿Imports GestorCitas.Domain
 Imports GestorCitas.Infrastructure
 
 Public Class PacienteService
@@ -10,6 +9,11 @@ Public Class PacienteService
 
     Sub New(pacienteRepository As IPacienteRepository)
         _pacienteRepository = pacienteRepository
+        AddHandler _pacienteRepository.OnPacientesChanged, AddressOf OnRepositoryChangedHandler
+    End Sub
+
+    Public Sub OnRepositoryChangedHandler() Implements IPacienteService.OnRepositoryChangedHandler
+        RaiseEvent OnRepositoryChanged()
     End Sub
 
     Public Function ObtenerPacientes() As List(Of IPaciente) Implements IPacienteService.ObtenerPacientes
@@ -17,26 +21,11 @@ Public Class PacienteService
     End Function
 
     Public Function AgregarPaciente(paciente As IPaciente) As Dictionary(Of String, Object) Implements IPacienteService.AgregarPaciente
-        Dim response As New Response()
+        Dim pacienteEncontrado As IPaciente = _pacienteRepository.ObtenerPacientePorCedula(paciente.Cedula)
 
-        If ObtenerPacientes.Find(Function(p) p.Cedula = paciente.Cedula) IsNot Nothing Then
-            response.Message = "El paciente ya existe"
-            response.Success = False
-            response.Data = Nothing
+        If pacienteEncontrado IsNot Nothing Then Return Respuesta.Crear("El paciente ya existe", False, Nothing)
 
-            Return New Dictionary(Of String, Object) From {
-                {"message", response.Message},
-                {"success", response.Success},
-                {"data", response.Data}
-            }
-        End If
-
-        Dim pacienteAgregado = _pacienteRepository.AgregarPaciente(paciente)
-        Return New Dictionary(Of String, Object) From {
-            {"message", "Paciente agregado"},
-            {"success", True},
-            {"data", pacienteAgregado}
-        }
+        Return Respuesta.Crear("Paciente agregado", True, _pacienteRepository.AgregarPaciente(paciente))
     End Function
 
     Public Function ValidarCedula(cedula As String) As Boolean Implements IPacienteService.ValidarCedula
@@ -45,5 +34,13 @@ Public Class PacienteService
 
     Public Function ValidarCorreo(correo As String) As Boolean Implements IPacienteService.ValidarCorreo
         Return REGEX_CORREO.IsMatch(correo)
+    End Function
+
+    Public Function ObtenerPacientePorCedula(cedula As String) As Dictionary(Of String, Object) Implements IPacienteService.ObtenerPacientePorCedula
+        Dim paciente As IPaciente = _pacienteRepository.ObtenerPacientePorCedula(cedula)
+
+        If paciente Is Nothing Then Return Respuesta.Crear("Paciente no encontrado", False, Nothing)
+
+        Return Respuesta.Crear("Paciente encontrado", True, paciente)
     End Function
 End Class

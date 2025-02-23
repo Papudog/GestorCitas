@@ -16,4 +16,8 @@ Public Class MedicoService
     Public Function ObtenerMedicos() As List(Of IMedico) Implements IMedicoService.ObtenerMedicos
         Return _medicoRepository.Medicos.ToList()
     End Function
+
+    Public Function ObtenerConsultorios() As Integer() Implements IMedicoService.ObtenerConsultorios
+        Return _medicoRepository.Consultorios.ToArray()
+    End Function
 End Class

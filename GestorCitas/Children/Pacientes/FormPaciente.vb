@@ -24,15 +24,16 @@ Public Class FormPaciente
             .Cedula = TextCedula.Text,
             .FechaNacimiento = DateTimeNacimiento.Value,
             .Correo = TextCorreo.Text,
+            .Telefono = TextTelefono.Text,
             .Direccion = TextDireccion.Text,
             .Foto = PictureBox1.Image
         })
 
-        If response("success") Then
-            MessageBox.Show(response("message"), "Creación exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        If response(SUCCESS) Then
+            MessageBox.Show(response(Message), "Creación exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information)
             LimpiarCampos()
         Else
-            MessageBox.Show(response("message"), "Error al agregar paciente", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(response(MESSAGE), "Error al agregar paciente", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
 
@@ -107,7 +108,7 @@ Public Class FormPaciente
     End Sub
 
     Private Function CalcularEdad() As Integer
-        Dim fechaNacimiento As Date = DateTimeNacimiento.Value
+        Dim fechaNacimiento As DateTime = DateTimeNacimiento.Value
         Dim edad As Integer = DateTime.Now.Year - fechaNacimiento.Year
 
         If DateTime.Now.DayOfYear < fechaNacimiento.DayOfYear Then edad -= 1
