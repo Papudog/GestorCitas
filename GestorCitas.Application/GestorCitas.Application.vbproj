@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>GestorCitas.Application</RootNamespace>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GestorCitas.Domain\GestorCitas.Domain.vbproj" />
+    <ProjectReference Include="..\GestorCitas.Infrastructure\GestorCitas.Infrastructure.vbproj" />
+  </ItemGroup>
+
+</Project>
